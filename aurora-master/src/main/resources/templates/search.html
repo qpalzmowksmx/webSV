@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora flight search</title>
+  <link rel="stylesheet" href="/css/flights.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.iamport.kr/v1/iamport.js"></script>
+</head>
+<body>
+<nav class="nav-links">
+  <a href="https://www.hotelscombined.co.kr/" class="nav-btn active">
+    Hotels
+  </a>
+  <a href="https://www.kayak.co.kr/cars" class="nav-btn">
+    Rent Cars
+  </a>
+  <a href="https://www.kayak.co.kr/cars" class="nav-btn">
+    Restaurant
+  </a>
+</nav>
+<div class="container">
+  <header>
+    <h1>flight search</h1>
+
+    <!-- 로그아웃 버튼 -->
+    <div class="logout-container">
+      <form action="/user/logout" method="get">
+        <button type="submit" class="logout-btn">logout</button>
+      </form>
+      <button id="my-bookings-btn" rel="">Booking Inquiry</button>
+    </div>
+  </header>
+  <div class="search-form">
+    <label for="departure">Departure:</label>
+    <select id="departure">
+      <option value="인천">Incheon</option>
+      <option value="김포">Gimpo</option>
+      <option value="제주">Jeju</option>
+      <option value="도쿄">Tokyo</option>
+      <option value="삿포로">Sapporo</option>
+      <option value="오사카">Osaka</option>
+      <option value="후쿠오카">Fukuoka</option>
+    </select>
+
+    <label for="arrival">Arrival:</label>
+    <select id="arrival">
+      <option value="인천">Incheon</option>
+      <option value="김포">Gimpo</option>
+      <option value="제주">Jeju</option>
+      <option value="도쿄">Tokyo</option>
+      <option value="삿포로">Sapporo</option>
+      <option value="오사카">Osaka</option>
+      <option value="후쿠오카">Fukuoka</option>
+    </select>
+
+    <label for="date">Date:</label>
+    <input type="date" id="date">
+
+    <button id="search-btn">Search</button>
+  </div>
+
+  <div id="flight-results" class="flight-results">
+    <!-- 검색된 항공편 목록이 여기에 표시됩니다. -->
+  </div>
+</div>
+
+<div id="booking-modal" style="display:none;">
+  <div class="modal-content">
+    <button id="close-modal">close</button>
+    <h2>예약 내역</h2>
+    <div id="booking-results">
+      <!-- 예약 내역이 여기에 표시됩니다. -->
+    </div>
+  </div>
+</div>
+
+<script src="/js/flights.js"></script>
+</body>
+</html>
+
+
